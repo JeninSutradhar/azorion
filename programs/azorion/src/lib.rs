@@ -5,7 +5,7 @@ use anchor_lang::solana_program::clock;
 use anchor_lang::system_program; // Import system_program for transfer // Import CpiContext
 pub const BASE_REWARD_MULTIPLIER: u64 = 1_000_000; // Equivalent to multiplying by 0.000001 SOL
 
-declare_id!("ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"); //Replace with the program's public key, the address that the program is deployed to.
+declare_id!("YOUR_PROGRAM_ID"); //Replace with the program's public key, the address that the program is deployed to.
 
 #[program]
 pub mod azorion {
