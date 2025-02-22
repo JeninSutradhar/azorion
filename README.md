@@ -1,6 +1,11 @@
 # Azorion - A Dynamic Task-Based Reward System on Solana
 Azorion is a Solana-based smart contract that enables users to complete tasks and earn SOL rewards dynamically based on demand-supply logic. This decentralized reward system ensures fair distribution, prevents farming abuse, and provides a leaderboard to track top earners.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d5eefb93-0aae-40d5-8758-55cc3f41c3a5" alt="logo" width=400>
+</p>
+
+
 `⚠️Under Developement`
 
 🔹 **Key Features:**  
