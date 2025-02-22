@@ -19,7 +19,7 @@ Azorion is a Solana-based smart contract that enables users to complete tasks an
 ## 🔹 **Technology Stack:**  
 - **Blockchain:** Solana (Rust + Anchor)  
 - **Smart Contracts:** Rust, Anchor Framework  
-- **Testing & Deployment:** Solana Devnet, Anchor CLI, JavaScript (for tests)  
+- **Testing & Deployment:** Solana Devnet, Anchor CLI, TypeScript (for tests)  
 
 ## 🔹 **Use Cases:**  
 - **Play-to-Earn (P2E) Gaming Rewards** 
