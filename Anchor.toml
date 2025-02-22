@@ -4,7 +4,8 @@
 resolution = true
 skip-lint = false
 
-// devnet & Testnet generated key
+# devnet & Testnet generated key
+# Replace it with yours, generated after deployment
 [programs.localnet]
 azorion = "ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"
 
