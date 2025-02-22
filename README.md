@@ -113,6 +113,8 @@ To deploy Azorion to different Solana networks:
 
 
 ## 🗺️ Roadmap and Future Work
+![brand-page-laptop-on-desk](https://github.com/user-attachments/assets/58968b40-ec07-4916-8d52-e199157c50e5)
+
 *   **Leaderboard Integration**
 *   **Frontend UI & SDK**
 *   **Governance Module**
