@@ -413,6 +413,9 @@ pub fn generate_range(min: u8, max: u8) -> u64 {
     return rand;
 }
 
+
+
+// ERor Handling
 #[error_code]
 pub enum ErrorCode {
     #[msg("Invalid activity type")]
