@@ -11,7 +11,8 @@ declare_id!("YOUR_PROGRAM_ID"); //Replace with the program's public key, the add
 pub mod azorion {
     // Changed module name to azorion to match project name
     use super::*;
-
+    
+    // set outside of this module }Scope errors} 
     // pub const BASE_REWARD_MULTIPLIER: u64 = 1_000_000; // Equivalent to multiplying by 0.000001 SOL
 
     pub fn initialize(
