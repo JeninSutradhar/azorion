@@ -1,6 +1,6 @@
 # Azorion - Dynamic Task-Based Reward System on Solana
 
-[![Project Status](https://img.shields.io/badge/Status-Under_Development-yellow)](https://www.repostatus.org/#wip) [![Rust](https://img.shields.io/badge/Rust-orange?logo=rust)](https://www.rust-lang.org/) [![Anchor](https://img.shields.io/badge/Anchor-red?logo=anchor)](https://www.anchor-lang.com/) [![Solana](https://img.shields.io/badge/Solana-blue?logo=solana)](https://solana.com/) [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT) [![Tests Passing](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://your-test-results-url-here.com) <!-- Replace with your actual test results URL --> [![Code Coverage](https://img.shields.io/badge/Coverage-85%25-blueviolet)](https://your-code-coverage-url-here.com) <!-- Replace with your actual code coverage URL --> [![Documentation](https://img.shields.io/badge/Documentation-Available-blue)](https://your-documentation-url-here.com) <!-- Replace if you have dedicated documentation -->
+[![Project Status](https://img.shields.io/badge/Status-Under_Development-yellow)](https://www.repostatus.org/#wip) [![Rust](https://img.shields.io/badge/Rust-orange?logo=rust)](https://www.rust-lang.org/) [![Anchor](https://img.shields.io/badge/Anchor-red?logo=anchor)](https://www.anchor-lang.com/) [![Solana](https://img.shields.io/badge/Solana-blue?logo=solana)](https://solana.com/) [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT) [![Tests Passing](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://your-test-results-url-here.com) [![Code Coverage](https://img.shields.io/badge/Coverage-85%25-blueviolet)](https://your-code-coverage-url-here.com) [![Documentation](https://img.shields.io/badge/Documentation-Available-blue)](https://your-documentation-url-here.com)  
 
 
 **Azorion** is a Solana smart contract designed to revolutionize reward distribution by enabling a dynamic task-based earning system. Users can engage in predefined activities and earn SOL rewards that fluctuate in real-time, adapting to the balance of task demand and user supply. This decentralized approach prevents farming abuse, making it ideal for a wide range of applications from play-to-earn gaming to decentralized work platforms.
@@ -9,34 +9,44 @@
   <img src="https://github.com/user-attachments/assets/d5eefb93-0aae-40d5-8758-55cc3f41c3a5" alt="Azorion Logo" width=300 height=280>
 </p>
 
-At its core, it establishes a demand-responsive incentive structure. Rewards are algorithmically increased during periods of high task availability and low user engagement, effectively incentivizing participation. Conversely, rewards are moderated when user activity exceeds available tasks, promoting system sustainability and preventing inflationary pressures.
 
-## Key Highlights
+## **🔹 Key Features**  
 
-| Feature                       | Description                                                                                                |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **✅Task-Based Rewards**        | Users earn SOL by completing predefined tasks across different categories.                                |
-| **✅Dynamic Reward Adjustment** | Rewards automatically adjust (±20%/±10%) based on the ratio of tasks to users (Demand-Supply Logic).        |
-| **✅PDA User Storage**          | Secure, on-chain storage of user data (history, rewards) using Program Derived Addresses.                 |
-| **✅Anti-Farming Mechanism**    | Progressive reward reduction (halving rewards) for repeated tasks; resets upon task switch.                 |
-| **✅Cooldown System**           | 5-second cooldown period after each task completion to prevent spamming.                                  |
-| **✅RNG Task Availability**     | Tasks are randomly flagged as available/unavailable every 10 seconds for dynamic engagement.                |
+|                                                                  | |
+|--------------------------------|--------------------------------------------------------------------------------|
+| **Task-Based Rewards**         | Users earn **SOL** by completing on-chain tasks.                               |
+| **Dynamic Reward Adjustment**  | Rewards **increase or decrease** (±20%/±10%) based on task availability.       |
+| **Secure PDA Storage**         | Uses **Program Derived Addresses (PDA)** for tamper-proof tracking.           |
+| **Anti-Farming Protection**    | **Reduces rewards** for repeated task claims; resets when switching tasks.     |
+| **Cooldown System**            | **5-second delay** enforced between task completions to prevent spam.          |
+| **RNG Task Availability**      | **Randomized task enable/disable** every **10 seconds** to enhance engagement. |
 
-## 🔹 **Technology Stack:**  
-- **Blockchain:** Solana (Rust + Anchor)  
-- **Smart Contracts:** Rust, Anchor Framework  
-- **Testing & Deployment:** Solana Devnet, Anchor CLI, TypeScript (for tests)  
+At its core, Azorion establishes a demand-responsive incentive structure. Rewards are algorithmically increased during periods of high task availability and low user engagement, effectively incentivizing participation. Conversely, rewards are moderated when user activity exceeds available tasks, promoting system sustainability and preventing inflationary pressures.
 
-##  Use Cases
 
-Azorion's dynamic reward system is ideal for:
+## 🛠️ Program Architecture
+```mermaid
+graph TD
+    A[User] -->|claim_reward| B(Anchor Program)
+    B --> C[PDA User Account]
+    C --> D{Check Cooldown}
+    D -->|Valid| E[Calculate Reward]
+    E --> F[Update User State]
+    F --> G[Transfer SOL]
+    H[Admin] -->|randomize_tasks| B
+    B --> I[Program State]
+```
 
-*   **Play-to-Earn Games:** Dynamic in-game rewards based on player activity.
-*   **Learning Platforms:** Incentivize students with adjustable rewards for course milestones.
-*   **🌐 Decentralized Work:** Fair, demand-based compensation for freelance tasks.
-*   **🗳️ Community Governance:** Reward participation in proposals and community actions.
-*   **🤝 Loyalty Programs:** Dynamic rewards to enhance customer engagement and retention.
-*   **Data Curation:** Incentivize data contribution with flexible, scalable rewards.
+
+
+## **🔹 Use Cases**  
+Azorion's dynamic reward system supports:  
+
+✔ **Play-to-Earn Games** – Task-based in-game incentives.  
+✔ **Educational Platforms** – Milestone-based rewards for learners.  
+✔ **Decentralized Work** – Demand-based compensation for freelancers.  
+✔ **Community Governance** – Rewarding proposal participation.  
+✔ **Loyalty Programs** – Engagement-driven incentives.  
 
 ## ✅ Implementation Status
 | Feature                                      | Status      |
@@ -51,64 +61,88 @@ Azorion's dynamic reward system is ideal for:
 | **Leaderboard (Top 5 Earners)**             | ❌ To be Implemented |
 | **Automated Tests**                          | ✅ Completed |
 
-## 🧪 Testing Highlights
+## **🔹 Security Measures**  
 
-*   **Comprehensive Suite:** Tests cover core functionalities: reward dynamics, anti-farming, cooldown, initialization.
-*   **Scenario-Based:** Tests simulate different user and task availability conditions.
-*   **Assertion-Driven:** Uses `chai` assertions for clear validation of contract behavior.
-*   **Reliability Focused:** Ensures robustness and predictability of reward system logic.
+| **Security Aspect**       | **Implementation**                                                                  |
+|--------------------------|------------------------------------------------------------------------------------|
+| **Access Control**       | **Authority-restricted program initialization** and **parameter management**.     |
+| **Anti-Farming**         | Implements **progressive reward penalties** for repeated task farming.            |
+| **Data Integrity**       | Utilizes **Solana PDAs** to ensure **on-chain secure storage**.                   |
+| **Memory Safety**        | Built with **Rust**, ensuring **safe and secure memory management**.              |
+| **Security Audits**      | 🚧 **Planned periodic third-party audits** *(Required before production use).*   |
 
-| Test Category                  | Coverage                                                                                                      |
-| :----------------------------- | :------------------------------------------------------------------------------------------------------------ |
-| **Initialization**             | Program state setup, authority verification                                                                 |
-| **Reward Dynamics**            | High/Low demand scenarios, balanced supply, reward increase/decrease/stability verification                  |
-| **Anti-Farming**              | Reward reduction on repeated tasks, reset on task switch, continuous penalty application                       |
-| **Cooldown**                   | Enforcement of 5-second cooldown period, successful claims after cooldown                                     |
+💡 **Note:** *Azorion is currently under development. Deployment in production environments is not recommended until a formal audit is completed.*  
 
-## 🛡️ Security Measures
+---
 
-| Security Aspect           | Implementation                                                                                                 |
-| :------------------------ | :------------------------------------------------------------------------------------------------------------- |
-| **Access Control**        | Authority-based program initialization & parameter management; user-limited interactions.                        |
-| **Anti-Farming**          | Reward penalties & cooldowns to prevent automated exploitation.                                                |
-| **Data Integrity**        | PDAs for secure, program-controlled user data storage.                                                           |
-| **Memory Safety**         | Rust development for inherent memory safety, reducing common vulnerabilities.                                    |
-| **Security Audits**       | *(Planned)* Regular third-party audits to identify and mitigate potential risks.                               |
+## **🔹 Program API**  
 
-**Disclaimer:** Azorion is under development and not yet audited. Use in production without audit is discouraged. Smart contracts involve inherent risks.
+| **Instruction**   | **Purpose**                                                   | **Arguments**                                               |
+|------------------|---------------------------------------------------------------|------------------------------------------------------------|
+| `initialize`     | Sets up **program state** (authority, SOL supply, task limits).  | `initial_supply: u64`, `min_available_tasks: u8`, `max_available_tasks: u8` |
+| `claim_reward`   | Allows users to **claim SOL rewards** for completing tasks.  | `activity_type: String` |
+| `randomize_tasks`| Refreshes **task availability** based on randomization logic. | *(No Arguments)* |
 
-## Program API
+---
 
-| Instruction        | Purpose                                                                    | Arguments                                                                        |
-| :----------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
-| `initialize`       | Set up program state (authority, initial SOL, task availability range).      | `initial_supply: u64`, `min_available_tasks: u8`, `max_available_tasks: u8` |
-| `claim_reward`     | Claim SOL reward for completing a specific task.                            | `activity_type: String`                                                        |
-| `randomize_tasks`  | Randomize number of available tasks (authority-only).                         | None                                                                             |
+## **🔹 Deployment Instructions**  
 
+### **📌 Local Validator Deployment**  
+1️⃣ Start the local validator:  
+```sh
+solana-test-validator
+```  
+2️⃣ Deploy the program:  
+```sh
+anchor deploy
+```  
 
-## 📦 Deployment Instructions
+### **📌 Devnet Deployment**  
+1️⃣ Configure Solana to **Devnet**:  
+```sh
+solana config set --url devnet
+```  
+2️⃣ Get **free test SOL**:  
+```sh
+solana airdrop 5
+```  
+3️⃣ Deploy the program:  
+```sh
+anchor deploy --provider.cluster devnet
+```  
 
-To deploy Azorion to different Solana networks:
+### **📌 Testnet/Mainnet Deployment**  
+1️⃣ Switch to **Testnet/Mainnet**:  
+```sh
+solana config set --url testnet  # For Testnet  
+solana config set --url mainnet-beta  # For Mainnet  
+```  
+2️⃣ Ensure sufficient **SOL balance** for deployment.  
+3️⃣ Deploy the program:  
+```sh
+anchor deploy --provider.cluster testnet  # Use mainnet-beta for production  
+```  
 
-### Local Validator Deployment
+---
 
-1.  **Start Local Validator:**  `solana-test-validator`
-2.  **Deploy Program:** `anchor deploy` (Ensure Solana CLI is set to local validator URL)
+## **🔹 Testing Overview**  
 
-### Devnet Deployment
+Azorion undergoes **extensive testing** using **Mocha + Chai** for assertion-based validation.  
 
-1.  **Set Solana Config to Devnet:** `solana config set --url devnet`
-2.  **Request Devnet SOL:** `solana airdrop 5` (Request SOL for your wallet if needed)
-3.  **Deploy Program:** `anchor deploy --provider.cluster devnet`
+| **Test Case**        | **Coverage**                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **Initialization**   | Ensures correct **program setup, authority verification**.                  |
+| **Reward Dynamics**  | Simulates **demand-based reward increases/decreases**.                      |
+| **Anti-Farming**     | Tests **progressive penalties for repeated task claims**.                   |
+| **Cooldowns**        | Verifies **5-second delay enforcement between claims**.                     |
+| **Security Checks**  | **Rejects unauthorized transactions, overflow, and invalid inputs.**       |
 
-### Testnet/Mainnet Deployment
+---
 
-*Deployment to Testnet or Mainnet requires careful consideration and thorough testing on Devnet/Testnet first. Ensure you have sufficient SOL in your wallet to cover deployment and transaction fees.*
-
-1.  **Set Solana Config to Testnet/Mainnet:** `solana config set --url testnet` or `solana config set --url mainnet-beta`
-2.  **Ensure Sufficient SOL Balance:** Fund your wallet with enough SOL for deployment and initial program operation.
-3.  **Deploy Program:** `anchor deploy --provider.cluster testnet` or `anchor deploy --provider.cluster mainnet`
-
+## 🔹 **Technology Stack:**  
+- **Blockchain:** Solana (Rust + Anchor)  
+- **Smart Contracts:** Rust, Anchor Framework  
+- **Testing & Deployment:** Solana Devnet, Anchor CLI, TypeScript (for tests)  
 
 ## 🗺️ Roadmap and Future Work
 <p align="center">
@@ -117,6 +151,4 @@ To deploy Azorion to different Solana networks:
 
 *   **Leaderboard Integration**
 *   **Frontend UI & SDK**
-*   **Governance Module**
-*   **Cross-Chain Expansion**
 *   **Regular Security Audits**
