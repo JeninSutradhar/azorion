@@ -1,0 +1,36 @@
+[package]
+name = "azorion"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "azorion"
+
+[features]
+custom-heap = []
+custom-panic = []
+anchor-debug = []
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.30.1", features = ["init-if-needed"] }
+solana-program = "=1.18.26"
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+solana-program = { version = "=1.18.26" }
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1
