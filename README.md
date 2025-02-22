@@ -3,7 +3,7 @@
 [![Project Status](https://img.shields.io/badge/Status-Under_Development-yellow)](https://www.repostatus.org/#wip) [![Rust](https://img.shields.io/badge/Rust-orange?logo=rust)](https://www.rust-lang.org/) [![Anchor](https://img.shields.io/badge/Anchor-red?logo=anchor)](https://www.anchor-lang.com/) [![Solana](https://img.shields.io/badge/Solana-blue?logo=solana)](https://solana.com/) [![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT) [![Tests Passing](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://your-test-results-url-here.com) [![Code Coverage](https://img.shields.io/badge/Coverage-85%25-blueviolet)](https://your-code-coverage-url-here.com) [![Documentation](https://img.shields.io/badge/Documentation-Available-blue)](https://your-documentation-url-here.com)  
 
 
-**Azorion** is a Solana smart contract designed to revolutionize reward distribution by enabling a dynamic task-based earning system. Users can engage in predefined activities and earn SOL rewards that fluctuate in real-time, adapting to the balance of task demand and user supply. This decentralized approach prevents farming abuse, making it ideal for a wide range of applications from play-to-earn gaming to decentralized work platforms.
+Azorion is a **Solana smart contract** that powers a **task-driven reward system**, enabling users to earn **SOL dynamically** based on task availability and engagement levels. The system uses **real-time demand-supply mechanics** to adjust rewards, **prevent farming exploits**, and encourage **sustainable participation**.  
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d5eefb93-0aae-40d5-8758-55cc3f41c3a5" alt="Azorion Logo" width=300 height=280>
