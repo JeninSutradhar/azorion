@@ -9,7 +9,6 @@ import { assert } from "chai";
 
 
 describe("azorion_task_reward_program_tests", () => {
-  // Updated describe block name
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
