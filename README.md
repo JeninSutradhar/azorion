@@ -25,18 +25,8 @@ At its core, Azorion establishes a demand-responsive incentive structure. Reward
 
 
 ## 🛠️ Program Architecture
-```mermaid
-graph TD
-    A[User] -->|claim_reward| B(Anchor Program)
-    B --> C[PDA User Account]
-    C --> D{Check Cooldown}
-    D -->|Valid| E[Calculate Reward]
-    E --> F[Update User State]
-    F --> G[Transfer SOL]
-    H[Admin] -->|randomize_tasks| B
-    B --> I[Program State]
-```
 
+![Architecture](https://github.com/user-attachments/assets/5299c3b2-620d-4ebe-9638-ece6eb9e29c8)
 
 
 ## **🔹 Use Cases**  
