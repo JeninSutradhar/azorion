@@ -47,9 +47,9 @@ Azorion's dynamic reward system supports:
 | **Anti-Farming Mechanism**                   | ✅ Completed |
 | **Cooldown System**                          | ✅ Completed |
 | **RNG-Based Task Availability**              | ✅ Completed |
-| **Security & Optimization**                   | ✅ Completed |
+| **Security & Optimization**                   | ❌ Completed |
 | **Leaderboard (Top 5 Earners)**             | ❌ To be Implemented |
-| **Automated Tests**                          | ✅ Completed |
+| **Automated Tests**                          | ❌ Completed |
 
 ## **🔹 Security Measures**  
 
