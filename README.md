@@ -8,14 +8,15 @@ Azorion is a Solana-based smart contract that enables users to complete tasks an
 
 `⚠️Under Developement`
 
-🔹 **Key Features:**  
-✅ **Task-Based Earning** – Users complete predefined activities (e.g., voting, staking, referrals) to earn SOL rewards.  
-✅ **Dynamic Reward System** – Uses **demand-supply mechanics** to **increase/decrease rewards** based on availability.  
-✅ **PDA-Based User Tracking** – Stores user **task history & rewards** securely on Solana using **Program Derived Addresses (PDA)**.  
-✅ **Anti-Farming Protection** – Prevents users from **spamming the same task** by applying progressive reward reduction.  
-✅ **Cooldown System** – Users must **wait 5 seconds** before performing another task to avoid abuse.  
-✅ **RNG-Based Task Availability** – Tasks are **randomly marked as available/unavailable** every 10 seconds.  
-✅ **Leaderboard (Planned Feature/Soon to be Implemented)** – Displays **top 5 earners** based on total SOL rewards and completed tasks.  
+
+## 🔹 **Key Features:**  
+- ✅ **Task-Based Earning** – Users complete predefined activities (e.g., voting, staking, referrals) to earn SOL rewards.  
+- ✅ **Dynamic Reward System** – Uses **demand-supply mechanics** to **increase/decrease rewards** based on availability.  
+- ✅ **PDA-Based User Tracking** – Stores user **task history & rewards** securely on Solana using **Program Derived Addresses (PDA)**.  
+- ✅ **Anti-Farming Protection** – Prevents users from **spamming the same task** by applying progressive reward reduction.  
+- ✅ **Cooldown System** – Users must **wait 5 seconds** before performing another task to avoid abuse.  
+- ✅ **RNG-Based Task Availability** – Tasks are **randomly marked as available/unavailable** every 10 seconds.  
+- **Leaderboard (Planned Feature/Soon to be Implemented)** – Displays **top 5 earners** based on total SOL rewards and completed tasks.  
 
 ---
 ## 🔹 **Technology Stack:**  
