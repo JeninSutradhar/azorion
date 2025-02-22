@@ -4,6 +4,7 @@
 resolution = true
 skip-lint = false
 
+// devnet & Testnet generated key
 [programs.localnet]
 azorion = "ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"
 
