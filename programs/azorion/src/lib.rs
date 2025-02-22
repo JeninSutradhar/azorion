@@ -9,7 +9,6 @@ declare_id!("YOUR_PROGRAM_ID"); //Replace with the program's public key, the add
 
 #[program]
 pub mod azorion {
-    // Changed module name to azorion to match project name
     use super::*;
     
     // set outside of this module }Scope errors} 
@@ -155,7 +154,7 @@ pub struct Initialize<'info> {
         init,
         payer = authority,
         space = 8 + 8 + 32 + 1 + 1 + 8, // discriminator + balance +authority key + minimum & maximum allowed Tasks per block  + Last Random TS value  +8
-
+        // seeds & bump
         seeds = [b"program_state"],
         bump
     )]
