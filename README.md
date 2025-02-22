@@ -9,9 +9,7 @@
   <img src="https://github.com/user-attachments/assets/d5eefb93-0aae-40d5-8758-55cc3f41c3a5" alt="Azorion Logo" width=300 height=280>
 </p>
 
-At its core, Azorion establishes a demand-responsive incentive structure. Rewards are algorithmically increased during periods of high task availability and low user engagement, effectively incentivizing participation. Conversely, rewards are moderated when user activity exceeds available tasks, promoting system sustainability and preventing inflationary pressures.
-
-To safeguard against manipulation, Azorion integrates robust anti-farming protocols and a cooldown mechanism, maintaining system integrity and equitable access for all users. User reward data is securely managed via Program Derived Addresses (PDAs), leveraging Solana's inherent security to guarantee data integrity and user privacy.
+At its core, it establishes a demand-responsive incentive structure. Rewards are algorithmically increased during periods of high task availability and low user engagement, effectively incentivizing participation. Conversely, rewards are moderated when user activity exceeds available tasks, promoting system sustainability and preventing inflationary pressures.
 
 ## Key Highlights
 
