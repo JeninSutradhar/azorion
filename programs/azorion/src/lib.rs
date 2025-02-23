@@ -6,6 +6,7 @@ use anchor_lang::system_program;
 
 pub const BASE_REWARD_MULTIPLIER: u64 = 1_000_000;
 
+// REPLACE WITH URS
 declare_id!("ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"); // Ensure YOUR_PROGRAM_ID is replaced after build
 
 #[program]
