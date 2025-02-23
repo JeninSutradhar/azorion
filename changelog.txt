@@ -1,0 +1,15 @@
+    Numerical Task Identifiers (Enums): Replaced string task names with ActivityType enums, significantly improving efficiency in storage and processing. Tasks are now represented and handled internally using numerical IDs, which are faster to compare and less error-prone than strings.
+
+    Improved RNG for Task Availability: Modified the randomize_available_tasks function to use the block slot number from clock::Clock::get()?.slot as the source of randomness, making task availability less predictable and more resistant to potential manipulation compared to timestamp-based RNG.
+
+    Automated Tests (Separate tests/azorion.ts): Implemented a comprehensive test suite to verify core functionalities like reward calculation, anti-farming, cooldowns, and program initialization. Added a new test case to ensure the randomize_tasks function effectively changes task availability.
+
+    Error Handling: Incorporated custom error codes using the ErrorCode enum to provide more informative and specific error messages, aiding in debugging and user feedback.
+
+    Code Comments and Documentation: Added extensive comments to the code, explaining the purpose and logic of different sections and functions, enhancing readability and maintainability.
+
+    Account Size Management: Defined MAX_SIZE constants for ProgramState and User accounts and utilized them in #[account(space = ...)] to ensure rent exemption and prevent potential buffer overflow vulnerabilities.
+
+    init and space Order Correction: Fixed the order of attributes within the #[account(...)] macros, placing init before space as per Anchor best practices, resolving the "init must be provided before space" errors.
+
+    Dependency Management: Cleaned up and verified Cargo.toml dependencies to ensure only anchor-lang is strictly required and that no unnecessary or conflicting dependencies are included, resolving build failures related to dependency resolution.

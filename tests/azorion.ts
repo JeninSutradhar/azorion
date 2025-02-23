@@ -3,12 +3,8 @@ import { Program } from "@project-serum/anchor";
 import { Azorion } from "../target/types/azorion"; // Updated program name
 import { assert } from "chai";
 
-  // RNG-Based Task Availability and Dynamic User Generation tests are more complex to simulate
-  // and might require more sophisticated test setup, time manipulation, and user simulation.
-  // Basic functionality of reward dynamics and anti-farming are covered in these tests
-
-
 describe("azorion_task_reward_program_tests", () => {
+  // Updated describe block name
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
@@ -538,8 +534,5 @@ describe("azorion_task_reward_program_tests", () => {
 
   // RNG-Based Task Availability and Dynamic User Generation tests are more complex to simulate
   // and might require more sophisticated test setup, time manipulation, and user simulation.
-  // Basic functionality of reward dynamics and anti-farming are covered in the above tests
-
-
-  // Add additional Tests here****
+  // Basic functionality of reward dynamics and anti-farming are covered in the above tests.
 });
