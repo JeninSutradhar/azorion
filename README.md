@@ -10,8 +10,6 @@ Azorion is a **Solana smart contract** that powers a **task-driven reward system
   <img src="https://github.com/user-attachments/assets/d5eefb93-0aae-40d5-8758-55cc3f41c3a5" alt="Azorion Logo" width=300 height=280>
 </p>
 
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fazorion.netlify.app)
-
 ## **🔹 Key Features**  
 
 |                                                                  | |
