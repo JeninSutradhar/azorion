@@ -13,8 +13,11 @@ declare_id!("ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"); // Ensure YOUR_PROG
 pub mod azorion {
     use super::*;
 
-    
-    
+    /// Initialize the Program
+    /// 
+    /// - Sets up initial configuration like -> total supply & task limits
+    /// - Authority is Assigned to manage program configurations
+    /// - Initializes state variables for reward distributions
     pub fn initialize(
         ctx: Context<Initialize>,
         initial_supply: u64,
@@ -34,10 +37,17 @@ pub mod azorion {
         Ok(())
     }
 
+    /// Claim a reward for completing a task 
+    /// 
+    /// - Ensures only autorized users can claim rewards
+    /// - Verifies task availability usin randomness
+    /// - cooldowms and Antifarming mechs.
+    /// - TRANSFERS 'SOL' TO A USER IF CONDITIONS ARE MET
     pub fn claim_reward(ctx: Context<ClaimReward>, activity_type_u8: u8) -> Result<()> {
         let user = &mut ctx.accounts.user;
         let program_state_account = &ctx.accounts.program_state;
 
+        // 1. CHECK AUTHORITY PERMISSIONS
         if program_state_account.authority != *ctx.accounts.authority.key {
             return Err(error!(ErrorCode::Unauthorized));
         }
@@ -45,22 +55,26 @@ pub mod azorion {
         let task_type: ActivityType = ActivityType::from_u8(activity_type_u8)
             .ok_or(ErrorCode::InvalidActivity)?;
 
+        // CHECK IF TASK IS AVAILABLE
         if !is_task_available(task_type, program_state_account)? {
             return Err(error!(ErrorCode::TaskUnavailable));
         }
 
+        // 5 SECOND COOLDOWN
         if user.last_claimed_ts != 0
             && clock::Clock::get().unwrap().unix_timestamp - user.last_claimed_ts < 5
         {
             return Err(error!(ErrorCode::CooldownActive));
         }
 
+        // CALCULATE REWARS WITH DYNAMIC ADJUSTMENTS
         let base_reward = get_base_reward(task_type);
         let adjusted_reward = calculate_dynamic_reward(program_state_account, base_reward)?;
 
         msg!("Base Reward: {} lamports", base_reward);
         msg!("Adjusted Reward: {} lamports", adjusted_reward);
 
+        // APPLY FARMING PENALTY
         let repetition_count = update_repetition_count(user, task_type);
         let farming_penalty = calculate_farming_penalty(repetition_count);
         let final_reward = (adjusted_reward as f64 * farming_penalty) as u64;
@@ -73,6 +87,7 @@ pub mod azorion {
             return Err(error!(ErrorCode::InsufficientBalance));
         }
 
+        // TRANSFER SOL TO USER
         let transfer_instruction = system_program::Transfer {
             from: ctx.accounts.program_state.to_account_info(),
             to: ctx.accounts.user_reward_account.to_account_info(),
