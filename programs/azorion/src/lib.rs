@@ -113,6 +113,11 @@ pub mod azorion {
         Ok(())
     }
 
+    
+    /// Randomizes the number of available tasks
+    ///
+    /// - Uses randomness based on Solana's block slot.
+    /// - Prevents frequent updates using a cooldown.
     pub fn randomize_tasks(ctx: Context<RandomizeTasks>) -> Result<()> {
         let program_state = &mut ctx.accounts.program_state;
 
@@ -185,6 +190,7 @@ pub struct RandomizeTasks<'info> {
 
 //------------------ Account Structs  --------------------------
 
+// THIS STRUCT STORE S GLOBAL CONFIGURATION VARIABLES
 #[account]
 #[derive(Default)]
 pub struct ProgramState {
@@ -201,6 +207,8 @@ impl ProgramState {
     const MAX_SIZE: usize = 8 + 8 + 8 + 32 + 1 + 1 + 1 + 8;
 }
 
+
+/// Stores individual user data and reward history
 #[account]
 #[derive(Default)]
 pub struct User {
