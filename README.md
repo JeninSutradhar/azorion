@@ -134,7 +134,7 @@ Azorion undergoes **extensive testing** using **Mocha + Chai** for assertion-bas
 - **Smart Contracts:** Rust, Anchor Framework  
 - **Testing & Deployment:** Solana Devnet, Anchor CLI, TypeScript (for tests)  
 
-## CHANGELOG
+## ⬆️ CHANGELOG
 - **Numerical Task Identifiers (Enums):** Replaced string task names with ActivityType enums, significantly improving efficiency in storage and processing. Tasks are now represented and handled internally using numerical IDs, which are faster to compare and less error-prone than strings.
 - **Improved RNG for Task Availability:** Modified the randomize_available_tasks function to use the block slot number from clock::Clock::get()?.slot as the source of randomness, making task availability less predictable and more resistant to potential manipulation compared to timestamp-based RNG.
 - **Error Handling:** Incorporated custom error codes using the ErrorCode enum to provide more informative and specific error messages, aiding in debugging and user feedback.
