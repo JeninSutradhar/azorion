@@ -1,7 +1,6 @@
 use anchor_lang::prelude::*;
 use anchor_lang::context::CpiContext;
 use anchor_lang::solana_program::clock;
-// use anchor_lang::solana_program::hash; // No longer directly used in randomize_tasks, so removing to avoid "unused import" warnings
 use anchor_lang::system_program;
 
 pub const BASE_REWARD_MULTIPLIER: u64 = 1_000_000;
