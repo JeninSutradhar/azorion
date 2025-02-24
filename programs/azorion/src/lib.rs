@@ -6,8 +6,8 @@ use anchor_lang::system_program;
 
 pub const BASE_REWARD_MULTIPLIER: u64 = 1_000_000;
 
-// REPLACE WITH URS PROGRAM ID
-declare_id!("ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"); // Ensure YOUR_PROGRAM_ID is replaced after build
+// REPLACE WITH YOUR PROGAM ID
+declare_id!("ARLUx3Yx7DKaTyKtngGr2ZahmAW2qUV7fzxttKudce4Y"); 
 
 #[program]
 pub mod azorion {
