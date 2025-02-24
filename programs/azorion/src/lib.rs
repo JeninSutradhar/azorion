@@ -189,7 +189,7 @@ pub struct RandomizeTasks<'info> {
 
 //------------------ Account Structs  --------------------------
 
-// THIS STRUCT STORE S GLOBAL CONFIGURATION VARIABLES
+// Stores golbal config. variables
 #[account]
 #[derive(Default)]
 pub struct ProgramState {
