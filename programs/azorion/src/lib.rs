@@ -227,7 +227,7 @@ impl User {
         (10 * (4 + 50));
 }
 
-//----------------------ENUM DEFINITIONS & UTILS FUNCTIONS  --------------------------
+//----------------------ENUM DEFINITIONS & UTILS FUNCTIONS  --------------------------//
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, AnchorSerialize, AnchorDeserialize)]
 pub enum ActivityType {
