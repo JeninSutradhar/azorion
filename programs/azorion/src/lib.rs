@@ -392,7 +392,7 @@ fn randomize_available_tasks(min: u8, max: u8) -> Result<u8> {
     Ok(rand_value)
 }
 
-
+// ERROR CODES
 #[error_code]
 pub enum ErrorCode {
     #[msg("Invalid activity type provided.")]
